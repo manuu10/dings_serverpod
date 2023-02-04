@@ -1,0 +1,5 @@
+class: DokumentoTagConnection
+table: dokumento_tag_connection
+fields:
+  tagId: int, parent=dokumento_tag
+  dokumentoId: int, parent=dokumento

@@ -1,0 +1,7 @@
+class: DokumentoTag
+table: dokumento_tag
+fields:
+  title: String
+  colorR: int
+  colorG: int
+  colorB: int

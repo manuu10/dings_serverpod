@@ -1,0 +1,7 @@
+class: Dokumento
+table: dokumento
+fields:
+  title: String
+  notes: String
+  tags: List<DokumentoTag>?, api
+  filePaths: List<String>
