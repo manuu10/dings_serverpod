@@ -1,5 +1,5 @@
 import '../app/home.screen.dart';
-import '../app/import_new_document.screen.dart';
+import '../app/import_new_document/import_new_document.screen.dart';
 import '../app/overview.screen.dart';
 import '../app/settings.screen.dart';
 import '../ui_core/angled_container.dart';
@@ -48,10 +48,6 @@ abstract class AppRouter {
           )
         ],
       ),
-      GoRoute(
-        parentNavigatorKey: rootKey,
-        path: "",
-      )
     ],
   );
 
