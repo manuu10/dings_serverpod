@@ -19,16 +19,34 @@ class OverviewScreen extends HookConsumerWidget {
         return ListView(
           padding: const EdgeInsets.only(right: 20),
           children: [
-            Text(
-              "Home",
-              style: Theme.of(context).textTheme.headlineLarge,
+            Row(
+              children: [
+                Text(
+                  "Home",
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+                AngledCornerButton(
+                  child: const Text("Refresh"),
+                  onTap: () => ref.refresh(dokumentoProvider),
+                )
+              ],
             ),
             const Divider(thickness: 3),
             for (final d in data) DocDingsTile(d)
           ],
         );
       },
-      error: (e, s) => const Text("Error"),
+      error: (e, s) => Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: AngledCornerButton(
+              child: const Text("Refresh"),
+              onTap: () => ref.refresh(dokumentoProvider),
+            ),
+          ),
+        ],
+      ),
       loading: () => Column(
         children: const [
           LinearProgressIndicator(),
