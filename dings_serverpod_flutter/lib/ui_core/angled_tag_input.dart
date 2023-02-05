@@ -150,3 +150,22 @@ class AngledTagInputProviderWrapper extends HookConsumerWidget {
     );
   }
 }
+
+class AngledTagViewProviderWrapper extends HookConsumerWidget {
+  const AngledTagViewProviderWrapper({
+    required this.tags,
+    Key? key,
+  }) : super(key: key);
+
+  final FutureProvider<List<DokumentoTag>> tags;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tagsData = ref.watch(tags);
+    return tagsData.when(
+      data: (data) => AngledTagView(tags: data),
+      error: (e, s) => const Text("error"),
+      loading: () => const LinearProgressIndicator(),
+    );
+  }
+}

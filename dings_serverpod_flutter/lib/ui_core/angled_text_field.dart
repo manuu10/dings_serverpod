@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'angled_container.dart';
 
 class AngledTextField extends StatefulWidget {
-  const AngledTextField({Key? key, this.controller}) : super(key: key);
+  const AngledTextField({Key? key, this.controller, this.hintText})
+      : super(key: key);
   final TextEditingController? controller;
+  final String? hintText;
 
   @override
   State<AngledTextField> createState() => _AngledTextFieldState();
@@ -32,10 +34,10 @@ class _AngledTextFieldState extends State<AngledTextField> {
       child: TextField(
         controller: widget.controller,
         focusNode: node,
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.only(left: 20),
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.only(left: 20),
           border: InputBorder.none,
-          hintText: "Document Title",
+          hintText: widget.hintText,
         ),
       ),
     );

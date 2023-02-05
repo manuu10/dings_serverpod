@@ -53,6 +53,7 @@ class AngledCornerButton extends HookWidget {
     final newBackgroundColor = disableBackground
         ? null
         : backgroundColor ?? mainColor.withOpacity(0.4);
+
     final newBackgroundHoverColor =
         backgroundHoverColor ?? mainColor.withOpacity(0.5);
 
